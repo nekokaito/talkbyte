@@ -15,7 +15,7 @@
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </div>
-                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-20 p-2 shadow bg-base-100 rounded-box w-52 ">
                   <li><a>Home</a></li>
                   <li><a>Edit</a></li>
                   <li><a>Add User</a></li>
@@ -57,9 +57,9 @@
     </nav>
 
     <main class="container mx-auto">
-        <header class="h-[250px] lg:h-[550px] mx-2 rounded-[32px] bg-[#12132D]">
+        <header class="h-[250px] lg:h-[550px] mx-2 rounded-[32px] bg-[#12132D] relative">
             <div class=" h-[250px] lg:h-[550px] flex justify-evenly items-center">
-                <div class="flex flex-col gap-3 lg:gap-8">
+                <div class="flex flex-col gap-3 lg:gap-8 z-10">
                         <h1 class="text-white text-center lg:text-left font-mulish text-3xl lg:text-6xl font-extrabold">
                             Welcome to the<br><span class="text-[#797DFCFF]">Re<span class="text-[#797dfc96]">Tro</span></span> Forum
                         </h1>
@@ -70,8 +70,8 @@
                         </div>
                         
                 </div>
-                <div >
-                    <div class="bg-white hidden lg:flex justify-center items-center font-mulish text-xl rounded-xl gap-3 p-5 font-extrabold ">
+                <div>
+                    <div class="bg-white hidden lg:flex justify-center items-center font-mulish text-xl rounded-xl gap-3 p-5 font-extrabold z-10">
                          <ul>
                             <li>Registered Users</li>
                             <li>Forum</li>
@@ -87,8 +87,9 @@
                          </ul>
                     </div>
                 </div>
-                
+                <img class="absolute w-full bottom-0" src="images/bgbanner.png" alt="">
             </div>
+            
            
             </header>
             <div class="bg-gray-100 lg:hidden flex justify-center items-center font-mulish text-xl rounded-xl gap-3 p-5 font-extrabold mx-4 mt-4 ">
@@ -162,7 +163,7 @@
                       </div>
                 </div>
 
-                <div class="bg-[#F3F3F5] mt-5 w-[374px] p-10 rounded-3xl"> 
+                <div class="bg-[#F3F3F5] h-auto mt-5 w-[374px] p-10 rounded-3xl"> 
                     <div class="flex justify-between">
                         <h2 class="font-mulish text-xl font-extrabold">Title</h2>
                         <p><i class="fa-solid fa-check-double text-green-400"></i> Mark as Read</p>
@@ -191,6 +192,76 @@
                 </div>
               </div>
               <!-- API Card -->
+              <div class="my-6">
+                <h1 class="font-mulish text-4xl font-extrabold text-center">Latest Posts</h1>
+                <p class="text-center text-[#12132D99] font-Inter mt-2 mx-1">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+              </div>
+              
+                <div class="mx-9 my-16 flex gap-9">
+                  <!-- card-1 -->
+                  <div class="card flex-1 bg-base-100 shadow-xl">
+                    <figure class="p-5"><img class="rounded-xl" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="" /></figure>
+                    <div class="card-body">
+                      <p class="font-mulish text-[#12132D99]"> <i class="fa-regular fa-calendar"></i> 29 January 2020</p>
+                      <h2 class="card-title font-mulish font-extrabold">What will a mars habitat force that impact in our daily life!!!</h2>
+                      <p>Yes, you can run unit tests and view the results directly within the app. </p>
+                      <div class="card-actions justify-start">
+                       <div class="flex gap-2 justify-start">
+                        <div>
+                          <img class="rounded-full" src="images/test.png" alt="">
+                        </div>
+                        
+                        <div class="font-mulish">
+                          <h4 class="font-extrabold">Cameron Williamson</h4>
+                          <p class="text-[#12132D99] font-light text-sm">ROR Developer</p>
+                        </div>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card flex-1 bg-base-100 shadow-xl">
+                    <figure class="p-5"><img class="rounded-xl" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="" /></figure>
+                    <div class="card-body">
+                      <p class="font-mulish text-[#12132D99]"> <i class="fa-regular fa-calendar"></i> 29 January 2020</p>
+                      <h2 class="card-title font-mulish font-extrabold">What will a mars habitat force that impact in our daily life!!!</h2>
+                      <p>Yes, you can run unit tests and view the results directly within the app. </p>
+                      <div class="card-actions justify-start">
+                       <div class="flex gap-2 justify-start">
+                        <div>
+                          <img class="rounded-full" src="images/test.png" alt="">
+                        </div>
+                        
+                        <div class="font-mulish">
+                          <h4 class="font-extrabold">Cameron Williamson</h4>
+                          <p class="text-[#12132D99] font-light text-sm">ROR Developer</p>
+                        </div>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card flex-1 bg-base-100 shadow-xl">
+                    <figure class="p-5"><img class="rounded-xl" src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="" /></figure>
+                    <div class="card-body">
+                      <p class="font-mulish text-[#12132D99]"> <i class="fa-regular fa-calendar"></i> 29 January 2020</p>
+                      <h2 class="card-title font-mulish font-extrabold">What will a mars habitat force that impact in our daily life!!!</h2>
+                      <p>Yes, you can run unit tests and view the results directly within the app. </p>
+                      <div class="card-actions justify-start">
+                       <div class="flex gap-2 justify-start">
+                        <div>
+                          <img class="rounded-full" src="images/test.png" alt="">
+                        </div>
+                        
+                        <div class="font-mulish">
+                          <h4 class="font-extrabold">Cameron Williamson</h4>
+                          <p class="text-[#12132D99] font-light text-sm">ROR Developer</p>
+                        </div>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+             
             </section>
 
     </main>
