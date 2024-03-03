@@ -5,7 +5,7 @@ const displayDiscuss = (posts) => {
                const card = document.createElement('div');
               
                
-               card.innerHTML = `<div id="post" class="flex mx-4 mt-6 bg-[#F3F3F5] p-10 rounded-3xl gap-4 relative">
+               card.innerHTML = `<div id="post" class="flex w-full mx-4 mt-6 bg-[#F3F3F5] p-10 rounded-3xl gap-4 relative">
                <div class="max-w-20 rounded-xl">
                    <div class="flex justify-end">
                        <span
@@ -44,7 +44,7 @@ const displayDiscuss = (posts) => {
                        <h4 class="text-[#12132D99]"><i class="fa-regular fa-clock mr-2"></i>${post.posted_time} min</h1>
                      </div>
                    </div>
-                  <div class="flex justify-end absolute bottom-7 right-8">
+                  <div class="flex justify-end lg:absolute lg:bottom-7 lg:right-8">
                    <button
                    onclick="addRead(${post.id},'${(post.title).replace("'","’")}',${post.view_count})" class="btn rounded-full bg-green-300"
                    > <i class="fa-solid fa-envelope-open text-white"></i>
@@ -74,7 +74,7 @@ const displayDiscuss = (posts) => {
 const addRead = (id,title,views) => {
      const readPost = document.getElementById('readPost');
      const addPost = document.createElement('div');
-    addPost.classList.add = 'bg-white rounded-xl p-2 mt-2  flex gap-2 justify-between font-bold font-mulish';
+    addPost.classList.add = 'bg-white rounded-xl p-2 mt-2 flex gap-2 justify-between font-bold font-mulish';
     addPost.innerHTML = `  <div id="readPost-${id}" class="bg-white rounded-xl p-2 mt-2  flex gap-2 justify-between font-bold font-mulish">
     <div><p class="text-sm">${title}</p></div>
     <div class="flex gap-1"><i class="fa-regular fa-eye"></i><p>${views}</p></div>
