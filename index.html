@@ -65,8 +65,8 @@
                         </h1>
                         <p class="text-white text-center font-mulish">Share your favorite opinion and win and wp forum coffee mug!</p>
                         <div class="flex gap-1 text-center w-1/2 lg:w-full">
-                            <input type="text" placeholder="Search your content" class="input lg:w-full input-bordered max-w-xs" />
-                            <button class="btn bg-purple-400 text-white border-none">Search</button>
+                            <input id="search" type="text" placeholder="Search your content" class="input lg:w-full input-bordered max-w-xs" />
+                            <button onclick="searchBox()" class="btn bg-purple-400 text-white border-none">Search</button>
                         </div>
                         
                 </div>
@@ -113,11 +113,14 @@
                 <h1 class="font-mulish text-3xl font-extrabold text-center">Let’s Discuss</h1>
                 <p class="text-center text-[#12132D99] font-Inter mt-2 mx-1">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
               </div>
+              <div class="flex justify-center mt-10">
+                <span id="loading" class="loading hidden loading-infinity loading-lg"></span>
+              </div>
               
-
               <div class="flex mt-4 justify-center">
+                
                   <div id="d-content" class="flex flex-col ">
-                   
+                    
                   
                   </div>
                 

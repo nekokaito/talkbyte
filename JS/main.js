@@ -2,14 +2,14 @@ const displayDiscuss = (posts) => {
     const discussPost = document.getElementById('d-content');
      
       posts.forEach(post => {
-        
                const card = document.createElement('div');
-            
-               card.innerHTML = `<div id="post-${post.id}" class="flex mx-4 mt-6 bg-[#F3F3F5] p-10 rounded-3xl gap-4 relative">
+              
+               
+               card.innerHTML = `<div id="post" class="flex mx-4 mt-6 bg-[#F3F3F5] p-10 rounded-3xl gap-4 relative">
                <div class="max-w-20 rounded-xl">
                    <div class="flex justify-end">
                        <span
-                       id="status-id" class="dot bg-green-500 h-3 w-3 inline-block rounded-full border-2 border-white"
+                       id="status-${post.id}" class="dot h-3 w-3 inline-block rounded-full border-2 border-white"
                     ></span>
                    </div>
                    
@@ -54,10 +54,22 @@ const displayDiscuss = (posts) => {
            </div>
                `
                discussPost.appendChild(card);
+               let status_id = `status-${post.id}`;
+              
+               const status = document.getElementById(status_id);
+               if (post.isActive === true) {
+                  
+                 status.classList.add('bg-green-400');
+                 console.log(status_id);
+               }
+               else {
+                status.classList.add("bg-red-400");
+                console.log('nope');
+               }
                
                
       });
-      
+      loading(false);
 }
 const addRead = (id,title,views) => {
      const readPost = document.getElementById('readPost');
@@ -107,4 +119,38 @@ const displayPost = (posts) => {
        `
        apiCardDiv.appendChild(card);
   });
+}
+
+const searchBox = () => {
+  
+  loading(true);
+  const discussPost = document.getElementById('d-content');
+  discussPost.innerHTML = ``;
+  const searchText = document.getElementById('search');
+  const searchContent = searchText.value;
+
+  loadDiscussAPI(searchContent);
+  
+
+}
+
+
+const loading = (isYes) => {
+  const loadingDiv = document.getElementById('loading');
+  const discussPost = document.getElementById('d-content');
+  const readPost = document.getElementById('readPost');
+  if (isYes) {
+   
+    loadingDiv.classList.remove('hidden');
+    discussPost.classList.add('hidden');
+    readPost.classList.add('hidden');
+  }
+  else {
+    setTimeout(() => {
+      loadingDiv.classList.add('hidden');
+      discussPost.classList.remove('hidden');
+      readPost.classList.remove('hidden');
+    }, 2000);
+  }
+
 }
