@@ -3,6 +3,8 @@ const loadDiscussAPI = async () => {
         const data = await res.json();
         const posts = data.posts;
         displayDiscuss(posts);
+        
+        
 }
 
 const loadPostsAPI = async () => {

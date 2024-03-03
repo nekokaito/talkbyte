@@ -1,7 +1,8 @@
 const displayDiscuss = (posts) => {
     const discussPost = document.getElementById('d-content');
-   
+     
       posts.forEach(post => {
+        
                const card = document.createElement('div');
             
                card.innerHTML = `<div id="post-${post.id}" class="flex mx-4 mt-6 bg-[#F3F3F5] p-10 rounded-3xl gap-4 relative">
@@ -45,7 +46,7 @@ const displayDiscuss = (posts) => {
                    </div>
                   <div class="flex justify-end absolute bottom-7 right-8">
                    <button
-                   onclick="" class="btn rounded-full bg-green-300"
+                   onclick="addRead(${post.id},'${(post.title).replace("'","’")}',${post.view_count})" class="btn rounded-full bg-green-300"
                    > <i class="fa-solid fa-envelope-open text-white"></i>
                    </button>
                   </div>
@@ -53,5 +54,25 @@ const displayDiscuss = (posts) => {
            </div>
                `
                discussPost.appendChild(card);
+               
+               
       });
+      
+}
+const addRead = (id,title,views) => {
+    
+     
+     
+    const readPost = document.getElementById('readPost');
+     const addPost = document.createElement('div');
+    addPost.classList.add = 'bg-white rounded-xl p-2 mt-2  flex gap-2 justify-between font-bold font-mulish';
+    addPost.innerHTML = `  <div id="readPost-${id}" class="bg-white rounded-xl p-2 mt-2  flex gap-2 justify-between font-bold font-mulish">
+    <div><p class="text-sm">${title}</p></div>
+    <div class="flex gap-1"><i class="fa-regular fa-eye"></i><p>${views}</p></div>
+</div>
+    `
+    
+    readPost.appendChild(addPost);
+    
+    
 }
