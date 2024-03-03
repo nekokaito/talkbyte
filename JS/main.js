@@ -60,10 +60,7 @@ const displayDiscuss = (posts) => {
       
 }
 const addRead = (id,title,views) => {
-    
-     
-     
-    const readPost = document.getElementById('readPost');
+     const readPost = document.getElementById('readPost');
      const addPost = document.createElement('div');
     addPost.classList.add = 'bg-white rounded-xl p-2 mt-2  flex gap-2 justify-between font-bold font-mulish';
     addPost.innerHTML = `  <div id="readPost-${id}" class="bg-white rounded-xl p-2 mt-2  flex gap-2 justify-between font-bold font-mulish">
@@ -71,8 +68,43 @@ const addRead = (id,title,views) => {
     <div class="flex gap-1"><i class="fa-regular fa-eye"></i><p>${views}</p></div>
 </div>
     `
+   readPost.appendChild(addPost);
     
-    readPost.appendChild(addPost);
     
-    
+}
+const displayPost = (posts) => {
+  console.log(posts);
+  const apiCardDiv = document.getElementById('api-card');
+  posts.forEach(post => {
+    if (typeof  post.author.posted_date === 'undefined') {
+      post.author.posted_date = 'No Publish Date';
+    }
+    if (typeof  post.author.designation === 'undefined') {
+      post.author.designation= 'Unknown';
+    }
+        const card = document.createElement('div');
+        card.innerHTML = `  <div class="card flex-1 bg-base-100 shadow-xl">
+         <figure class="p-5"><img class="rounded-xl" src="${post.cover_image}" alt="" /></figure>
+         <div class="card-body">
+           <p class="font-mulish text-[#12132D99]"> <i class="fa-regular fa-calendar"></i> ${post.author.posted_date}</p>
+           <h2 class="card-title font-mulish font-extrabold">${post.title}</h2>
+           <p>Yes, you can run unit tests and view the results directly within the app. </p>
+           <div class="card-actions justify-start">
+            <div class="flex gap-2 justify-start">
+             <div>
+               <img class="rounded-full w-[44px]" src="${post.profile_image}"" alt="">
+             </div>
+             
+             <div class="font-mulish">
+               <h4 class="font-extrabold">${post.author.name}</h4>
+               <p class="text-[#12132D99] font-light text-sm">${post.author.designation}</p>
+             </div>
+            </div>
+           </div>
+         </div>
+       </div>
+         
+       `
+       apiCardDiv.appendChild(card);
+  });
 }
